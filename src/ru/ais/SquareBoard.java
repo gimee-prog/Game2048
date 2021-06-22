@@ -36,7 +36,9 @@ public class SquareBoard extends Board{
             }
             return keyList;
         }
+        return keyList;
     }
+
     @Override
     void addItem(Key key, Integer value) {
     board.put(key, value);
@@ -46,8 +48,9 @@ public class SquareBoard extends Board{
     Key getKey(int i, int j) {
         for (Key key: board.keySet()
              ) {
-            if (key.getI() == i && key.getJ() == j){
-            } return key;
+            if (key.getI() == i && key.getJ() == j) {
+                return key;
+            }
         }
         return null;
     }
@@ -84,16 +87,16 @@ public class SquareBoard extends Board{
 
     @Override
     boolean hasValue(Integer value) {
-        if board.containsValue(value){
-            return true;
-        }
-        return false;
+        return board.containsValue(value);
     }
 
     @Override
     List<Integer> getValues(List<Key> keys) {
-        List<Key> listOfValues = new ArrayList<Key>();
-
-        return null;
+        List<Integer> listOfValues = new ArrayList<Integer>();
+        for (Entry entry: board.entrySet()
+             ) {
+            listOfValues.add((Integer) entry.getValue());
+        }
+        return listOfValues;
     }
 }

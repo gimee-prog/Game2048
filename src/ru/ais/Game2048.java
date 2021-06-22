@@ -1,6 +1,6 @@
 package ru.ais;
 
-import com.sun.javafx.scene.traversal.Direction;
+
 
 import java.util.Random;
 
