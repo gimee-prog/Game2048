@@ -14,13 +14,16 @@ public class SquareBoard extends Board{
 
     @Override
     void fillBoard(List<Integer> list) {
-        int k =0;
+        Iterator<Integer> itr = list.iterator();
+
+        do {
             for (int i = 0; i < weigh; i++) {
                 for (int j = 0; j < height; j++) {
-                    board.put(new Key(i, j), list.get(k));
-                k++;
+                    board.put(new Key(i, j), itr.next());
+
                 }
             }
+        } while (itr.hasNext());
     }
 
 
@@ -29,12 +32,10 @@ public class SquareBoard extends Board{
     @Override
     List<Key> availableSpace() {
         List<Key> keyList = new ArrayList<>();
-        for (Entry entry : board.entrySet()
-        ) {
-            if (entry.getValue() == null) {
-                keyList.add((Key) entry.getKey());
+        for (Key key : board.keySet()) {
+            if (board.get(key) == null) {
+                keyList.add(key);
             }
-            return keyList;
         }
         return keyList;
     }
@@ -63,13 +64,17 @@ public class SquareBoard extends Board{
 
     @Override
     List<Key> getColumn(int j) {
+
         List<Key> listOfColumns = new ArrayList<Key>();
-        for (Key key: board.keySet()
-             ) {
-            if (key.getJ() == j){
-                listOfColumns.add(key);
-            }
+       for (int i = 0; i < 2; i++) {
+           listOfColumns.add(getKey(i,j));
         }
+       //or (Key key: board.keySet()
+       //    ) {
+       //   if (key.getJ() == j){
+       //       listOfColumns.add(key);
+       //   }
+       //
         return listOfColumns;
     }
 
