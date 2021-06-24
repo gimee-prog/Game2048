@@ -13,14 +13,12 @@ public class GameHelper {
             if (list1.get(i) != null) {
                 if (list1.get(i) == list1.get(i + 1)) {
                     list1.set(i, list1.get(i)*2);
-                    list1.set(i+1, null);
                     list1.remove(i+1);
                     list1.add(null);
                 }
             }
         }
         list = list1;
-        //Collections.sort(list, Comparator.nullsLast());
         return list;
         }
     }
