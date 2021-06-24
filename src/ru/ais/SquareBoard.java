@@ -1,13 +1,14 @@
 package ru.ais;
 
-
+import java.util.Comparator;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
-public class SquareBoard extends Board{
+public class SquareBoard extends Board {
     public SquareBoard(int size) {
         super(size, size);
     }
@@ -65,27 +66,18 @@ public class SquareBoard extends Board{
     @Override
     List<Key> getColumn(int j) {
 
-        List<Key> listOfColumns = new ArrayList<Key>();
-       for (int i = 0; i < 2; i++) {
-           listOfColumns.add(getKey(i,j));
-        }
-       //or (Key key: board.keySet()
-       //    ) {
-       //   if (key.getJ() == j){
-       //       listOfColumns.add(key);
-       //   }
-       //
+        List<Key> listOfColumns = new ArrayList<>();
+        for (int i = 0; i < height; i++) {
+            listOfColumns.add(getKey(i,j));
+          }
         return listOfColumns;
-    }
+        }
 
     @Override
     List<Key> getRow(int i) {
-        List<Key> listOfRows = new ArrayList<Key>();
-        for (Key key: board.keySet()
-        ) {
-            if (key.getI() == i){
-                listOfRows.add(key);
-            }
+        List<Key> listOfRows = new ArrayList<>();
+        for (int j = 0; j < weigh; j++) {
+            listOfRows.add(getKey(i,j));
         }
         return listOfRows;
     }
@@ -97,10 +89,10 @@ public class SquareBoard extends Board{
 
     @Override
     List<Integer> getValues(List<Key> keys) {
-        List<Integer> listOfValues = new ArrayList<Integer>();
-        for (Entry entry: board.entrySet()
+        List<Integer> listOfValues = new ArrayList<>();
+        for (Key key: keys
              ) {
-            listOfValues.add((Integer) entry.getValue());
+            listOfValues.add((board.get(key)));
         }
         return listOfValues;
     }
