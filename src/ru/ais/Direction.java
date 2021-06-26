@@ -1,5 +1,5 @@
 package ru.ais;
 
 public enum Direction {
-Left, Right, Forward, Up
+LEFT, RIGHT, DOWN, UP
 }

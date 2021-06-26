@@ -1,27 +1,21 @@
 package ru.ais;
 
-import java.util.Comparator;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.stream.Collectors;
 
-public class SquareBoard extends Board {
+public class SquareBoard<V> extends Board<Key,V> {
     public SquareBoard(int size) {
         super(size, size);
     }
 
     @Override
-    void fillBoard(List<Integer> list) {
-        Iterator<Integer> itr = list.iterator();
-
+    void fillBoard(List<V> list) {
+        Iterator<V> itr = list.iterator();
         do {
             for (int i = 0; i < weigh; i++) {
                 for (int j = 0; j < height; j++) {
                     board.put(new Key(i, j), itr.next());
-
                 }
             }
         } while (itr.hasNext());
@@ -42,8 +36,8 @@ public class SquareBoard extends Board {
     }
 
     @Override
-    void addItem(Key key, Integer value) {
-    board.put(key, value);
+    void addItem(Key key, V v) {
+    board.put(key, v);
     }
 
     @Override
@@ -58,14 +52,13 @@ public class SquareBoard extends Board {
     }
 
     @Override
-    Integer getValue(Key key) {
+    V getValue(Key key) {
 
         return board.get(key);
     }
 
     @Override
     List<Key> getColumn(int j) {
-
         List<Key> listOfColumns = new ArrayList<>();
         for (int i = 0; i < height; i++) {
             listOfColumns.add(getKey(i,j));
@@ -83,13 +76,13 @@ public class SquareBoard extends Board {
     }
 
     @Override
-    boolean hasValue(Integer value) {
-        return board.containsValue(value);
+    boolean hasValue(V v) {
+        return board.containsValue(v);
     }
 
     @Override
-    List<Integer> getValues(List<Key> keys) {
-        List<Integer> listOfValues = new ArrayList<>();
+    List<V> getValues(List<Key> keys) {
+        List<V> listOfValues = new ArrayList<>();
         for (Key key: keys
              ) {
             listOfValues.add((board.get(key)));
