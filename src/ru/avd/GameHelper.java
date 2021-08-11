@@ -1,9 +1,7 @@
-package ru.ais;
+package ru.avd;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Comparator;
 
 public class GameHelper {
     public List<Integer> moveAndMergeEqual(List<Integer> list) {

@@ -1,4 +1,4 @@
-package ru.ais;
+package ru.avd;
 
 import java.util.Objects;
 

@@ -1,9 +1,9 @@
-package ru.ais;
+package ru.avd;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
-import static ru.ais.BoardTest.assertEquals;
+import static ru.avd.BoardTest.assertEquals;
 
 
 public class BoardTest {
