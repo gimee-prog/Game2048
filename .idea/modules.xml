@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/src/ru/avd/core/core.iml" filepath="$PROJECT_DIR$/src/ru/avd/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ru/avd/gui/gui.iml" filepath="$PROJECT_DIR$/src/ru/avd/gui/gui.iml" />
       <module fileurl="file://$PROJECT_DIR$/untitled1.iml" filepath="$PROJECT_DIR$/untitled1.iml" />
     </modules>
   </component>

@@ -1,4 +1,6 @@
-package ru.avd;
+package ru.avd.gui;
+
+import ru.avd.core.*;
 
 import javax.swing.*;
 import java.awt.*;

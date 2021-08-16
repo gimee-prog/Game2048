@@ -1,4 +1,4 @@
-package ru.avd;
+package ru.avd.core;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,7 +10,7 @@ public class SquareBoard<V> extends Board<Key,V> {
     }
 
     @Override
-    void fillBoard(List<V> list) {
+    public void fillBoard(List<V> list) {
         Iterator<V> itr = list.iterator();
         do {
             for (int i = 0; i < weigh; i++) {
@@ -25,7 +25,7 @@ public class SquareBoard<V> extends Board<Key,V> {
 
 
     @Override
-    List<Key> availableSpace() {
+    public List<Key> availableSpace() {
         List<Key> keyList = new ArrayList<>();
         for (Key key : board.keySet()) {
             if (board.get(key) == null) {
@@ -36,12 +36,12 @@ public class SquareBoard<V> extends Board<Key,V> {
     }
 
     @Override
-    void addItem(Key key, V v) {
+    public void addItem(Key key, V v) {
     board.put(key, v);
     }
 
     @Override
-    Key getKey(int i, int j) {
+    public Key getKey(int i, int j) {
         for (Key key: board.keySet()
              ) {
             if (key.getI() == i && key.getJ() == j) {
@@ -52,13 +52,13 @@ public class SquareBoard<V> extends Board<Key,V> {
     }
 
     @Override
-    V getValue(Key key) {
+    public V getValue(Key key) {
 
         return board.get(key);
     }
 
     @Override
-    List<Key> getColumn(int j) {
+    public List<Key> getColumn(int j) {
         List<Key> listOfColumns = new ArrayList<>();
         for (int i = 0; i < height; i++) {
             listOfColumns.add(getKey(i,j));
@@ -67,7 +67,7 @@ public class SquareBoard<V> extends Board<Key,V> {
         }
 
     @Override
-    List<Key> getRow(int i) {
+    public List<Key> getRow(int i) {
         List<Key> listOfRows = new ArrayList<>();
         for (int j = 0; j < weigh; j++) {
             listOfRows.add(getKey(i,j));
@@ -76,12 +76,12 @@ public class SquareBoard<V> extends Board<Key,V> {
     }
 
     @Override
-    boolean hasValue(V v) {
+    public boolean hasValue(V v) {
         return board.containsValue(v);
     }
 
     @Override
-    List<V> getValues(List<Key> keys) {
+    public List<V> getValues(List<Key> keys) {
         List<V> listOfValues = new ArrayList<>();
         for (Key key: keys
              ) {

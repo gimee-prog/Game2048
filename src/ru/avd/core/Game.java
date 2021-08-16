@@ -1,6 +1,8 @@
-package ru.avd;
+package ru.avd.core;
 
 
+import ru.avd.core.Board;
+import ru.avd.core.Direction;
 
 public interface Game {
     void init();

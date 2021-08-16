@@ -1,4 +1,4 @@
-package ru.avd;
+package ru.avd.core;
 
 
 
@@ -14,9 +14,6 @@ public class Game2048 implements Game {
 
     Random random = new Random();
 
-   // public Game2048(Board board) {
-   //     this.board = board;
-   // }
 
     @Override
     public void init() {

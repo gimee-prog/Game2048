@@ -1,11 +1,11 @@
-package ru.avd;
+package ru.avd.core;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameHelper {
     public List<Integer> moveAndMergeEqual(List<Integer> list) {
-        //Collections.sort(list, Comparator.nullsLast(Comparator.naturalOrder()));
+
         List<Integer> list1 = new ArrayList<>();
         int k = 0;
         for (int i = 0; i < list.size(); i++) {

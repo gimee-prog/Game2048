@@ -1,4 +1,4 @@
-package ru.avd;
+package ru.avd.core;
 
 import java.util.Objects;
 

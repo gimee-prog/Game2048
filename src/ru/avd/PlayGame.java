@@ -1,5 +1,7 @@
 package ru.avd;
 
+import ru.avd.gui.Game2048Panel;
+
 import javax.swing.*;
 
 public class PlayGame {
